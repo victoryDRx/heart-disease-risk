@@ -116,10 +116,8 @@ span.required {
     /* transform: scale(1.1); */
 }
 
-
-.vdp-frm-btn.close {
+.vdp-frm-btn.clear {
     width: 100%;
-}
 
 #vdp-display-output-container {
     display: none;
