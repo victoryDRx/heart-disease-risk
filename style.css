@@ -117,12 +117,8 @@ span.required {
 }
 
 
-.vdp-frm-btn.submit {
-    /* display: block; 
-    position: fixed; 
-    bottom: 10px; 
-    right: 10px; 
-    z-index: 1000;  */
+.vdp-frm-btn.close {
+    width: 100%;
 }
 
 #vdp-display-output-container {
