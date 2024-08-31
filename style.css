@@ -1,0 +1,140 @@
+html {
+    --error: red;
+    --mainColor: #9182ab;
+    font-size: 1rem;
+}
+body {
+    background-color: var(--mainColor);
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+}
+body h1:first-child {
+    text-align: center;
+}
+main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style the form container */
+.heartDiseaseRiskForm {
+    max-width: 600px;
+    width: 100%;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    user-select: none;
+}
+
+/* Style the form fields */
+.heartDiseaseRiskForm fieldset {
+    border: 1px solid var(--mainColor);
+    padding: 10px;
+    margin: 0;
+    border-radius: 10px;
+    margin-bottom: 20px;  
+}
+
+.heartDiseaseRiskForm legend {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.vdp-form-group {
+    margin-bottom: 20px;
+}
+
+.vdp-field-contact .vdp-form-group-label {
+    display: block;
+    font-weight: bold;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+.heartDiseaseRiskForm input[type="text"], .heartDiseaseRiskForm input[type="email"], .heartDiseaseRiskForm input[type="tel"] {
+    width: 100%;
+    padding: 6px;
+    padding-right: 0;
+}
+
+ .vdp-form-group-label {
+    display: block;
+    font-weight: bold;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.vdp-form-group label:has(input[type="radio"]) {
+    display: block;
+    margin-left: 20px;
+}
+.heartDiseaseRiskForm input[type="radio"] {
+    margin-right: 10px;
+}
+span.required {
+    color: var(--error);
+    margin-left: 5px;
+    font-style: normal;
+}
+
+/* Style for error messages */
+.vdp-error-message {
+    color: var(--error);
+    font-size: 14px;
+    display: none;
+    margin-top: 5px;
+}
+
+/* Highlight form group with errors */
+.vdp-form-group.error {
+    border-left: 3px solid var(--error);
+    padding-left: 10px;
+}
+
+/* Style for active and hover states of submit button */
+.vdp-form-footer {
+    background-color: var(--mainColor);
+    padding: 20px 0;
+    display: flex;
+}
+.vdp-form-footer button{
+    width: 50%;
+    padding: 8px;
+
+}
+.vdp-form-footer button:active,
+.vdp-form-footer button:hover {
+    background-color: var(--mainColor);
+    color: white;
+    /* transform: scale(1.1); */
+}
+
+
+.vdp-frm-btn.submit {
+    /* display: block; 
+    position: fixed; 
+    bottom: 10px; 
+    right: 10px; 
+    z-index: 1000;  */
+}
+
+#vdp-display-output-container {
+    display: none;
+    max-width: 600px;
+    width: 100%;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    user-select: none;
+
+}
