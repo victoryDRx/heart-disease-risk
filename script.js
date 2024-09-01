@@ -128,6 +128,7 @@ function calculateRisk() {
         timestamp: new Date().toLocaleString(),
         firstName: form.elements['firstName'].value,
         lastName: form.elements['lastName'].value,
+        fullName: form.elements['firstName'].value + ' ' + form.elements['lastName'].value,
         email: form.elements['email'].value,
         phoneNumber: form.elements['phoneNumber'].value,
         totalPoints,
@@ -140,32 +141,24 @@ function calculateRisk() {
     selectedRadioInputs.forEach(group => {
        let question = group.closest('.vdp-form-group').querySelector('.label-text.radio').textContent.trim().slice(3);
        let answer = group.nextElementSibling.textContent;
-    //    selectedOptions.push(`${question}: ${answer}`);
-    userData[question] = answer;
+       userData[question] = answer;
     });
-
-    // const userData = Object.assign(userSummary, selectedOptions);
-    // const userData = { ...userSummary, ...selectedOptions }
-console.log(userSummary)
+console.log(userData)
     // Send data to Google Sheets
     sendDataToGoogleSheets(userData);
     }
     
-    
-// }
-
 
 
 
 // Function to send form data to Google Sheets
 function sendDataToGoogleSheets(data) {
-    // const scriptURL = 'YOUR_GOOGLE_APPS_SCRIPT_URL'; // Replace with your Google Apps Script URL
-    /*
+    const scriptURL = `https://script.google.com/macros/s/AKfycbxefyME77UiuGGv0RE2znwA5V8N9NJM6LISfTnreMdFHtG-xyq7ETRJrw6Hkh97zgnY/exec`
     fetch(scriptURL, {
         method: 'POST',
         body: JSON.stringify(data),
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
         }
     })
     .then(response => response.json())
@@ -173,7 +166,7 @@ function sendDataToGoogleSheets(data) {
         console.log('Success:', result);
     })
     .catch(error => console.error('Error:', error));
-    */
+    
 }
 
 // Attach event listeners for real-time validation
