@@ -34,7 +34,7 @@ function validateRequiredOptions() {
             group.classList.add('error');
             errorMessage.style.display = 'block';
             isValid = false;
-        } else {
+        } else if(errorMessage) {
             group.classList.remove('error');
             errorMessage.style.display = 'none';
         }
@@ -124,9 +124,21 @@ function calculateRisk() {
     `;
 
     // prepare the data to send
-    const userData = {};
+    const userData = {
+        firstName: form.elements['firstName'].value,
+        lastName: form.elements['lastName'].value,
+        email: form.elements['email'].value,
+        phoneNumber: form.elements['phoneNumber'].value,
+        totalPoints,
+        riskLevel,
 
-    const formInputElements = form.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"], input[type="radio"], textarea');
+    };
+
+    // const formInputElements = form.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"], input[type="radio"], textarea');
+    // formInputElements.forEach(formInputElement => {
+    //     userData[formInputElement.name] = formInputElement.value;
+    // });
+    const formInputElements = form.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"], textarea');
     formInputElements.forEach(formInputElement => {
         userData[formInputElement.name] = formInputElement.value;
     });
