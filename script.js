@@ -159,11 +159,12 @@ function sendDataToGoogleSheets(data) {
         body: JSON.stringify(data),
         headers: {
             'Content-Type': 'application/json',
-        }
+        }, 
+        mode: 'no-cors'
     })
-    .then(response => response.json())
+    .then(response => response.text())
     .then(result => {
-        console.log('Success:', result);
+        console.log(result);
     })
     .catch(error => console.error('Error:', error));
     
@@ -173,7 +174,7 @@ function sendDataToGoogleSheets(data) {
 const inputFields = form.querySelectorAll('input[type="radio"], input[type="text"], input[type="email"], input[type="tel"]');
 
 inputFields.forEach(field => {
-    // field.addEventListener('input', () => validateField(field)); 
+    field.addEventListener('input', () => validateField(field)); 
     field.addEventListener('change', () => validateField(field)); 
     field.addEventListener('blur', () => validateField(field));  
 });
