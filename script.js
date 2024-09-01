@@ -125,32 +125,28 @@ function calculateRisk() {
 
     // prepare the data to send
     const userData = {
+        timestamp: new Date().toLocaleString(),
         firstName: form.elements['firstName'].value,
         lastName: form.elements['lastName'].value,
         email: form.elements['email'].value,
         phoneNumber: form.elements['phoneNumber'].value,
         totalPoints,
         riskLevel,
-
+        customerReview: form.elements['customerReview'].value,
     };
 
-    const radioInput = form.querySelectorAll('input[type="radio"]:checked');    
+    const selectedRadioInputs = form.querySelectorAll('input[type="radio"]:checked');    
     const selectedOptions = [];
-    radioInput.forEach(group => {
+    selectedRadioInputs.forEach(group => {
        let question = group.closest('.vdp-form-group').querySelector('.label-text.radio').textContent.trim().slice(3);
        let answer = group.nextElementSibling.textContent;
-       selectedOptions.push(`${question}: ${answer}`);
-    });
-    alert(selectedOptions.join("\n"));
-
-
-    const formInputElements = form.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"], textarea');
-    formInputElements.forEach(formInputElement => {
-        userData[formInputElement.name] = formInputElement.value;
+    //    selectedOptions.push(`${question}: ${answer}`);
+    userData[question] = answer;
     });
 
-
-console.log(userData)
+    // const userData = Object.assign(userSummary, selectedOptions);
+    // const userData = { ...userSummary, ...selectedOptions }
+console.log(userSummary)
     // Send data to Google Sheets
     sendDataToGoogleSheets(userData);
     }
