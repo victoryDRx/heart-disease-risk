@@ -2,6 +2,7 @@ html {
     --error: red;
     --mainColor: #9182ab;
     font-size: 1rem;
+    /* box-sizing: border-box; */
 }
 body {
     background-color: var(--mainColor);
@@ -18,6 +19,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    resize: none;
 }
 
 /* Style the form container */
@@ -99,27 +101,28 @@ span.required {
 }
 
 /* Style for active and hover states of submit button */
-.vdp-form-footer {
+.vdp-container-element-footer {
     background-color: var(--mainColor);
     padding: 20px 0;
-    display: flex;
+    border-radius: 6px;
 }
-.vdp-form-footer button{
-    width: 50%;
+.vdp-container-element-footer.vdp-form-footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+}
+.vdp-container-element-footer button{
+    width: 100%;
     padding: 8px;
 
 }
-.vdp-form-footer button:active,
-.vdp-form-footer button:hover {
+.vdp-container-element-footer button:active,
+.vdp-container-element-footer button:hover {
     background-color: var(--mainColor);
     color: white;
-    /* transform: scale(1.1); */
 }
 
-.vdp-frm-btn.clear {
-    width: 100%;
-} 
-#vdp-display-output-container {
+.vdp-display-output-container {
     display: none;
     max-width: 600px;
     width: 100%;
@@ -132,21 +135,16 @@ span.required {
     user-select: none;
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+textarea {
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    resize: none;
+}
+.vdp-customer-review {
+    font-weight: bold;
+}

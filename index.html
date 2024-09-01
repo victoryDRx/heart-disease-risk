@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,31 +13,30 @@
     <main>
         <div class="vdp-display-output-container" id="vdp-display-output-container">
             <div class="vdp-display-output" id="vdp-display-output-id"></div>
-            <div class="vdp-form-footer">
-                <button type="reset" class="vdp-frm-btn clear" onclick="closeOutput()">Close</button>
-                <!-- <button type="submit" class="vdp-frm-btn-calculate" onclick="validateForm()">Close</button> -->
+            <div class="vdp-container-element-footer">
+                <button type="reset" class="vdp-frm-btn clear">Close</button>
             </div>
         </div>
         <form id="heartDiseaseRiskForm" class="heartDiseaseRiskForm">
             <fieldset id="vdp-field-contact" class="vdp-field-contact">
                 <legend>Contact</legend>
                 <div class="vdp-form-group">
-                    <label class="vdp-form-group-label required" for="firstName">First name<span class="required">*</span></label>
+                    <label class="vdp-form-group-label" for="firstName">First name<span class="required">*</span></label>
                         <input type="text" name="firstName" placeholder="Enter first name">
                     <span class="vdp-error-message">Please enter first name.</span>
                 </div>
                 <div class="vdp-form-group">
-                    <label class="vdp-form-group-label required" for="lastName">Last name<span class="required">*</span></label>
+                    <label class="vdp-form-group-label" for="lastName">Last name<span class="required">*</span></label>
                         <input type="text" name="lastName" placeholder="Enter last name">
                     <span class="vdp-error-message">Please enter surname name.</span>
                 </div>
                 <div class="vdp-form-group">
-                    <label class="vdp-form-group-label" for="email">Email<span class="required"></span>*</label>
+                    <label class="vdp-form-group-label" for="email">Email<span class="required">*</span></label>
                         <input type="email" name="email" placeholder="eg. myemail2024@example.com">
                     <span class="vdp-error-message">Please enter a valid email.</span>
                 </div>
                 <div class="vdp-form-group">
-                    <label class="vdp-form-group-label required" for="phoneNumber">Phone number<span class="required">*</span></label>
+                    <label class="vdp-form-group-label" for="phoneNumber">Phone number<span class="required">*</span></label>
                         <input type="tel" name="phoneNumber" placeholder="eg. +234xxxxxxxxxx">
                     <span class="vdp-error-message">Please enter phone number.</span>
                 </div>
@@ -120,16 +121,12 @@
                     <label><input name="diabetes" type="radio" value="10"><span class="opt">Have diabetes and it is not well controlled</span></label>
                     <span class="vdp-error-message">Please select an option.</span>
                 </div>
-                <div class="vdp-form-group">
-                    <label class="vdp-customer-review" for="customerReview">Your feedback</label>
-                    <textarea name="customerReview" id="customerReview" placeholder="Please tell us how you feel about this whole exercise"></textarea>
+                <div class="vdp-container-element-footer vdp-form-footer">
+                    <button type="reset" class="vdp-frm-btn clear">Clear</button>
+                    <button type="submit" class="vdp-frm-btn vdp-frm-btn-calculate" onclick="validateForm()">Calculate Risk</button>
                 </div>
-
+    
             </fieldset>
-            <div class="vdp-form-footer">
-                <button type="reset" class="vdp-frm-btn clear">Clear</button>
-                <button type="submit" class="vdp-frm-btn vdp-frm-btn-calculate" onclick="validateForm()">Calculate Risk</button>
-            </div>
         </form>
     </main>
     <script src="script.js"></script>
