@@ -134,10 +134,16 @@ function calculateRisk() {
 
     };
 
-    // const formInputElements = form.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"], input[type="radio"], textarea');
-    // formInputElements.forEach(formInputElement => {
-    //     userData[formInputElement.name] = formInputElement.value;
-    // });
+    const radioInput = form.querySelectorAll('input[type="radio"]:checked');    
+    const selectedOptions = [];
+    radioInput.forEach(group => {
+       let question = group.closest('.vdp-form-group').querySelector('.label-text.radio').textContent.trim().slice(3);
+       let answer = group.nextElementSibling.textContent;
+       selectedOptions.push(`${question}: ${answer}`);
+    });
+    alert(selectedOptions.join("\n"));
+
+
     const formInputElements = form.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"], textarea');
     formInputElements.forEach(formInputElement => {
         userData[formInputElement.name] = formInputElement.value;
